@@ -8,7 +8,18 @@
     <title>Simple js</title>
   </head>
   <body>
-    <header><h1>The CatBox</h1><div class="el"><div id="life"></div></div><h3 id="zone">Вы не в зоне</h3></header>
+    <header>
+      <h1>The CatBox</h1>
+      <p class="info"></p>
+      <p class="info"></p>
+      <p class="info"></p>
+  
+      <h3 id="zone">Вы не в зоне</h3>
+      <div id="record"><div class="record"></div><h3>Record</h3></div>
+      <div id="stop"><div class="stop"></div><h3>Stop</h3></div>
+      <img id="play" src="img/play.png" alt="">
+      <img src="Img/restart.png" alt="" id="restart">
+    </header>
     <main>
         <div class="surface"><div class="lines a"></div></div>
         <div class="surface"><div class="lines b"></div></div>
@@ -23,13 +34,11 @@
             <div class="bottomm sidem"></div>
             <div class="frontm sidem"></div>
           </div>
-          <div class="end">
-            <h1>К сожалению вы проиграли</h1>
-            <p>Не хотите попробывать свои силы еще раз?)</p>
-            <img src="Img/restart.png" alt="" id="restart">
-          </div>
     </main>
-    <footer></footer>
+    <footer id="footer">
+      <p id="valu"></p>
+      <p id="forvu"></p>
+    </footer>
     <script type="text/javascript" src="Js/Main.js"></script>
   </body>
 </html>

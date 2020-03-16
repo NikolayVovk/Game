@@ -9,6 +9,7 @@
   background: radial-gradient(#14161E,#222534);
   display: flex;
   align-items: flex-end;
+  overflow: hidden;
 }
 
 header{
@@ -18,7 +19,7 @@ header{
   height: 100px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   color:#FF5700;
 }
 
@@ -59,11 +60,56 @@ header h1{
   transform: rotate(360deg);
 }
 
-.el{
-  height: 5px;
-  width: 800px;
+
+#record{
   display: flex;
-  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  width: 100px;
+  color: #00FF3C;
+  justify-content: space-between;
+}
+
+.record{
+  width: 20px;
+  height: 20px;
+  background:#00FF3C;
+  border-radius: 50%;
+}
+
+#play{
+  cursor: pointer;
+  opacity: 0;
+  pointer-events:none;
+}
+
+@keyframes recording {
+  0% {
+   opacity:0.2;
+  }50% {
+    opacity:1;
+  }
+  100% {
+    opacity:0.2;
+  }
+}
+
+#stop{
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  width: 100px;
+  justify-content: space-between;
+  opacity: 0;
+  pointer-events:none;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+.stop{
+  width: 20px;
+  height: 20px;
+  background:#FF5700;
 }
 
 #life{
@@ -71,12 +117,13 @@ header h1{
   width: 800px;
   background: #0ED400;
   transition: all 0.5s ease;
+
 }
 
 .surface{
   background: linear-gradient(#14161E,#1E2048,#3D46D2);
-  width: 40px;
-  height: 1800px;
+  width: 50px;
+  height: 1600px;
   transform: rotateX(85deg) translateZ(0px) translateY(0px);
 }
 
@@ -112,10 +159,12 @@ header h1{
 
 @keyframes effect {
   0% {
-   top: -1000px;
+   top: -600px;
+  }50% {
+    top: 600px;
   }
   100% {
-    top: 2000px;
+    top: -600px;
   }
 }
 
@@ -126,9 +175,21 @@ header h1{
   transform-style: preserve-3d;
   font-size: 30px;
   position: absolute;
-  bottom: 10%;
-  transition: all 0.1s ease;
+  bottom: 20%;
+  transition: all 0.2s ease;
   animation-iteration-count:1;
+  z-index: 1;
+}
+
+.createDiv{
+  height: 120px;
+  width: 120px;
+  position: absolute;
+  bottom: 12%;
+  opacity: 0.5;
+  transition: all 1s ease;
+  background: #fff;
+  transform: rotateX(85deg);
 }
 
 
@@ -184,4 +245,21 @@ header h1{
 
   .frontm{
     transform: translateZ(40px);
+  }
+
+  footer{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: -10%;
+    width: 100%;
+    height: 50px;
+    background: #14161E;
+    color: #FF5700;
+    transition: all 0.5s ease;
+  }
+
+  footer p {
+    margin: 10px;
   }
